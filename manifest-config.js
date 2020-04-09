@@ -1,7 +1,7 @@
 const colors = require('./colors');
 
 module.exports = {
-  name: 'Mate Gatsby Starter',
+  name: 'Automation Developer Portfolio',
   short_name: 'Mate Gatsby Starter',
   start_url: '/',
   background_color: colors.background,
