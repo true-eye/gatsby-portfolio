@@ -14,10 +14,6 @@
     "test:open": "percy exec -t 350 -h cdn-images-1.medium.com -- cypress open",
     "test:ci": "DETERMINISTIC=true start-server-and-test serve 9000"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
-  },
   "keywords": [
     "gatsby",
     "starter",
@@ -25,12 +21,8 @@
     "PWA",
     "portfolio"
   ],
-  "author": "Ema Suriano",
+  "author": "True eye",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
-  },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
   "dependencies": {
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",
