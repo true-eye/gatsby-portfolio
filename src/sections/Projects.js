@@ -112,7 +112,6 @@ const Project = ({
   publishedDate,
   logo,
 }) => {
-  console.log(logo);
   return (
     <Card p={0}>
       <Flex style={{ height: CARD_HEIGHT }}>
