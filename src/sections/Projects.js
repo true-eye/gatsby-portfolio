@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass/styled-components';
+import { Image, Text, Flex, Box, Heading } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -103,6 +103,20 @@ const ProjectTag = styled.div`
   }
 `;
 
+const CoverImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+`;
+
+const EllipsisHeading = styled(Heading)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+`;
+
 const Project = ({
   name,
   description,
@@ -112,6 +126,23 @@ const Project = ({
   publishedDate,
   logo,
 }) => {
+  return (
+    <Card onClick={() => window.open(projectUrl, '_blank')} pb={4}>
+      <EllipsisHeading m={3} p={1} color="text">
+        {name}
+      </EllipsisHeading>
+      {logo?.image?.src && (
+        <CoverImage src={logo.image.src} height="200px" alt={name} />
+      )}
+      <Text m={3} color="text">
+        {description}
+      </Text>
+      <ImageSubtitle bg="primary" color="white" x="right" y="bottom" round>
+        {`${publishedDate} - ${type}`}
+      </ImageSubtitle>
+    </Card>
+  );
+
   return (
     <Card p={0}>
       <Flex style={{ height: CARD_HEIGHT }}>
@@ -134,13 +165,6 @@ const Project = ({
                 float: 'right',
               }}
             >
-              <Box mx={1} fontSize={5}>
-                <SocialLink
-                  name="Check repository"
-                  fontAwesomeIcon="github"
-                  url={repositoryUrl}
-                />
-              </Box>
               <Box mx={1} fontSize={5}>
                 <SocialLink
                   name="See project"
@@ -200,7 +224,7 @@ const Projects = () => (
               type
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height: 200) {
                   src
                 }
               }

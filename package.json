@@ -24,6 +24,8 @@
   "author": "True eye",
   "license": "MIT",
   "dependencies": {
+    "@babel/compat-data": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",
     "contentful": "^7.14.2",
